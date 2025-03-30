@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>annexes_projets_demineur/content.png</file>
+        <file>annexes_projets_demineur/drapeau.png</file>
+        <file>annexes_projets_demineur/neutre.png</file>
+        <file>annexes_projets_demineur/poteau.png</file>
+        <file>annexes_projets_demineur/triste.png</file>
+    </qresource>
+</RCC>
