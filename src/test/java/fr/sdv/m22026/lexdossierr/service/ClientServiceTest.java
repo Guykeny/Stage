@@ -77,16 +77,21 @@ public class ClientServiceTest {
         assertThrows(ResourceNotFoundException.class,() -> clientService.delete(99L));
     }
     @Test
-    void update_shouldUpdateFields_whenClientExists(){
-        Client client = new Client();
+    void update_shouldUpdateFields_whenClientExists() {
+        Client client = new Client();            // le client actuel en base
         client.setId(1L);
         client.setName("Martin");
+
+        Client newData = new Client();           // les nouvelles valeurs
+        newData.setName("Martin Paul");
+        newData.setEmail("martin@test.fr");
+
         when(clientRepository.findById(1L)).thenReturn(Optional.of(client));
-        when(clientRepository.save(any(Client.class))).thenAnswer(invocation -> invocation.getArgument(0));
+        when(clientRepository.save(any(Client.class))).thenAnswer(i -> i.getArgument(0));
 
-        Client result= clientService.update(1L,client);
-        assertEquals("Martin Paul",result.getName());
+        Client result = clientService.update(1L, newData);
 
+        assertEquals("Martin Paul", result.getName());
     }
 
 
