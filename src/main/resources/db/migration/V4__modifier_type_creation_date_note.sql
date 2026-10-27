@@ -1,0 +1,1 @@
+ALTER TABLE note ALTER COLUMN creation_date TYPE TIMESTAMP;
