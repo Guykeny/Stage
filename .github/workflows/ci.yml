@@ -41,6 +41,7 @@ jobs:
           chmod +x mvnw
           ./mvnw -B test
         env:
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
           SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/lexdossier
           SPRING_DATASOURCE_USERNAME: lex
           SPRING_DATASOURCE_PASSWORD: lex
